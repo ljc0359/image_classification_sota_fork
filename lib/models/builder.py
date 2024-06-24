@@ -55,6 +55,8 @@ def build_model(args, model_name, pretrained=False, pretrained_ckpt=''):
             from lib.models import local_vim
         if 'local_vssm' in model_name:
             from lib.models import local_vmamba
+        if 'vim' in model_name:
+            from lib.models import vim
         import timm
         model = timm.create_model(model_name[5:], pretrained=pretrained, drop_path_rate=args.drop_path_rate)
 
